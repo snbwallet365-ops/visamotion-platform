@@ -52,6 +52,7 @@
     $$('.news-filter button').forEach(b=>b.onclick=()=>{$$('.news-filter button').forEach(x=>x.classList.remove('active'));b.classList.add('active');const f=b.dataset.filter;$$('.news-card').forEach(c=>c.style.display=f==='all'||c.dataset.kind===f?'flex':'none')});
     $('#cookieButton').onclick=()=>$('#cookie').remove();$('#newsletterButton').onclick=()=>{const i=$('#newsletter');if(i.value.includes('@')){i.value='Subscribed ✓';i.disabled=true}else{i.focus();i.placeholder='Enter a valid email'}};
     if(!matchMedia('(prefers-reduced-motion: reduce)').matches){const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.animate([{opacity:0,transform:'translateY(20px)'},{opacity:1,transform:'translateY(0)'}],{duration:650,easing:'cubic-bezier(.2,.7,.2,1)',fill:'forwards'});io.unobserve(e.target)}}),{threshold:.12});$$('.service,.news-card,.story,.review,.faq-item,.tracker,.route-grid').forEach(e=>{e.style.opacity=0;io.observe(e)});}
+    const publishedLinks={'visamotion-visa.html':'https://visamotion.pages.bu.app/','visamotion-services.html':'https://visamotion-services.pages.bu.app/','visamotion-news.html':'https://visamotion-news.pages.bu.app/','visamotion-consult.html':'https://visamotion-consult.pages.bu.app/','visamotion-admin.html':'https://visamotion-admin.pages.bu.app/'};$$('a').forEach(a=>{const key=a.getAttribute('href');if(publishedLinks[key])a.href=publishedLinks[key]});
   </script>
 </body>
 </html>
